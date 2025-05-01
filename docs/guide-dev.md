@@ -39,5 +39,5 @@ docker-compose up -d --build
 # Lancer les commandes Laravel
 docker exec -it poesam-app bash
 php artisan key:generate
-php artisan migrate
+php artisan migrate.
 ```
