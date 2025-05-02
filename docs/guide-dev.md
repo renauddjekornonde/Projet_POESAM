@@ -40,4 +40,4 @@ docker-compose up -d --build
 docker exec -it poesam-app bash
 php artisan key:generate
 php artisan migrate.
-```
+
