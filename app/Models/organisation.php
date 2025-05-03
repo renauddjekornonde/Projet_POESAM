@@ -16,6 +16,7 @@ class organisation extends Model
         'email_organisation',
         'site_web_organisation',
         'logo_organisation',
+        'id_user',
     ];
     public function annonces()
     {
@@ -24,5 +25,9 @@ class organisation extends Model
     public function ressources()
     {
         return $this->hasMany(ressource::class, 'id_organisation');
+    }
+    public function user()
+    {
+        return $this->belongsTo(evenement::class, 'id_organisation');
     }
 }

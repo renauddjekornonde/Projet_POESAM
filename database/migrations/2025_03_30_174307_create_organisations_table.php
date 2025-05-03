@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('pays_organisation', 50)->nullable();
             $table->string('ville_organisation', 50)->nullable();
             $table->string('date_creation_organisation', 20)->nullable();
+            $table->unsignedBigInteger('id_user')->nullable();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
         });
     }
