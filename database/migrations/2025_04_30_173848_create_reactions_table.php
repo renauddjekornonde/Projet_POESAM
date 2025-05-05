@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('type', 50); // Type de réaction (like, love, etc.)
             $table->unsignedBigInteger('id_publication'); // ID de la publication qui a réagi
             $table->foreign('id_publication')->references('id')->on('publications')->onDelete('cascade');
-            $table->unsignedBigInteger('id_commentaire'); // ID de compataire qui a réagi
+            $table->unsignedBigInteger('id_commentaire'); // ID de commentire qui a réagi
             $table->foreign('id_commentaire')->references('id')->on('commentaires')->onDelete('cascade');
             $table->unsignedBigInteger('id_user'); // ID de l'utilisateur qui a réagi
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
