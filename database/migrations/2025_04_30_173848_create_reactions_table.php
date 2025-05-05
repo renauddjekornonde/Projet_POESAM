@@ -27,6 +27,11 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+    // Note: The down method should drop the reactions table
+    // and not the publications or commentaires tables.
+    // This is important to avoid foreign key constraint errors.
+    // The down method should be the reverse of the up method.
+    // It should drop the reactions table and remove any foreign key constraints.
     public function down(): void
     {
         Schema::dropIfExists('reactions');
