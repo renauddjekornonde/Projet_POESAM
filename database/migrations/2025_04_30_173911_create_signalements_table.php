@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('signalements', function (Blueprint $table) {
             $table->id();
             $table->text('motif');
+            // $table->text('motif');
+
             $table->date('date_signalement')->nullable();
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

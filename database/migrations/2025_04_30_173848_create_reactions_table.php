@@ -21,8 +21,6 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user'); // ID de l'utilisateur qui a réagi
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-            // $table->softDeletes(); // Pour gérer la suppression douce
-            // $table->unique(['id_publication', 'id_commentaire', 'id_user'], 'unique
         });
     }
 
