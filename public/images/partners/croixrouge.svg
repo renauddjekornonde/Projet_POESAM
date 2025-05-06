@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(50, 20)">
+        <!-- Red Cross Logo -->
+        <rect x="55" y="20" width="90" height="90" fill="#E31B23"/>
+        <rect x="75" y="40" width="50" height="50" fill="#FFFFFF"/>
+        <!-- Text with more spacing -->
+        <text x="100" y="150" font-family="Arial" font-size="20" font-weight="bold" fill="#E31B23" text-anchor="middle">CROIX ROUGE</text>
+    </g>
+</svg>

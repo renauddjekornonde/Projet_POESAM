@@ -28,6 +28,6 @@ class organisation extends Model
     }
     public function user()
     {
-        return $this->belongsTo(evenement::class, 'id_organisation');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }

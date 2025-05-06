@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sharing Experiences Illustration</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(100, 50)">
+            <!-- Background Circle -->
+            <circle fill="#F0EBFA" opacity="0.5" cx="300" cy="250" r="200"></circle>
+            
+            <!-- Group of Women in Circle -->
+            <!-- Woman 1 -->
+            <g transform="translate(200, 100)">
+                <!-- Head -->
+                <circle fill="#FFD7C3" cx="50" cy="50" r="30"></circle>
+                <!-- Hair -->
+                <path d="M20,50 C20,20 80,20 80,50 L80,70 C80,90 20,90 20,70 L20,50 Z" fill="#6C4A4A"></path>
+                <!-- Body -->
+                <path d="M35,80 L65,80 L75,150 L25,150 L35,80 Z" fill="#8A56E2"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="40" cy="45" r="6"></circle>
+                <circle fill="#FFFFFF" cx="60" cy="45" r="6"></circle>
+                <circle fill="#333333" cx="40" cy="45" r="3"></circle>
+                <circle fill="#333333" cx="60" cy="45" r="3"></circle>
+                <path d="M45,60 L55,60 C55,65 45,65 45,60 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Woman 2 -->
+            <g transform="translate(300, 150)">
+                <!-- Head -->
+                <circle fill="#FFC8A2" cx="50" cy="50" r="30"></circle>
+                <!-- Hair -->
+                <path d="M25,30 C25,15 75,15 75,30 L75,70 C75,90 25,90 25,70 L25,30 Z" fill="#333333"></path>
+                <!-- Body -->
+                <path d="M35,80 L65,80 L75,150 L25,150 L35,80 Z" fill="#FF6B6B"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="40" cy="45" r="6"></circle>
+                <circle fill="#FFFFFF" cx="60" cy="45" r="6"></circle>
+                <circle fill="#333333" cx="40" cy="45" r="3"></circle>
+                <circle fill="#333333" cx="60" cy="45" r="3"></circle>
+                <path d="M45,60 L55,60 C55,65 45,65 45,60 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Woman 3 -->
+            <g transform="translate(150, 200)">
+                <!-- Head -->
+                <circle fill="#EBCFC4" cx="50" cy="50" r="30"></circle>
+                <!-- Hair -->
+                <path d="M20,40 C20,20 80,20 80,40 L80,70 C80,90 20,90 20,70 L20,40 Z" fill="#A58E7E"></path>
+                <!-- Body -->
+                <path d="M35,80 L65,80 L75,150 L25,150 L35,80 Z" fill="#7442D3"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="40" cy="45" r="6"></circle>
+                <circle fill="#FFFFFF" cx="60" cy="45" r="6"></circle>
+                <circle fill="#333333" cx="40" cy="45" r="3"></circle>
+                <circle fill="#333333" cx="60" cy="45" r="3"></circle>
+                <path d="M45,60 L55,60 C55,65 45,65 45,60 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Woman 4 -->
+            <g transform="translate(250, 250)">
+                <!-- Head -->
+                <circle fill="#FFE0D0" cx="50" cy="50" r="30"></circle>
+                <!-- Hair -->
+                <path d="M25,35 C25,15 75,15 75,35 L75,70 C75,90 25,90 25,70 L25,35 Z" fill="#513C3C"></path>
+                <!-- Body -->
+                <path d="M35,80 L65,80 L75,150 L25,150 L35,80 Z" fill="#3498DB"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="40" cy="45" r="6"></circle>
+                <circle fill="#FFFFFF" cx="60" cy="45" r="6"></circle>
+                <circle fill="#333333" cx="40" cy="45" r="3"></circle>
+                <circle fill="#333333" cx="60" cy="45" r="3"></circle>
+                <path d="M45,60 L55,60 C55,65 45,65 45,60 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Speech Bubbles -->
+            <g transform="translate(100, 100)">
+                <path d="M0,0 L60,0 C80,0 80,40 60,40 L40,40 L30,60 L30,40 L0,40 C-20,40 -20,0 0,0 Z" fill="#FFFFFF" stroke="#8A56E2" stroke-width="2"></path>
+                <text x="20" y="25" font-family="Arial" font-size="12" fill="#333333">💜</text>
+            </g>
+            
+            <g transform="translate(350, 80)">
+                <path d="M0,0 L60,0 C80,0 80,40 60,40 L40,40 L30,60 L30,40 L0,40 C-20,40 -20,0 0,0 Z" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="2"></path>
+                <text x="20" y="25" font-family="Arial" font-size="12" fill="#333333">❤️</text>
+            </g>
+            
+            <g transform="translate(400, 200)">
+                <path d="M0,0 L60,0 C80,0 80,40 60,40 L40,40 L30,60 L30,40 L0,40 C-20,40 -20,0 0,0 Z" fill="#FFFFFF" stroke="#8A56E2" stroke-width="2"></path>
+                <text x="20" y="25" font-family="Arial" font-size="12" fill="#333333">✨</text>
+            </g>
+            
+            <g transform="translate(120, 280)">
+                <path d="M0,0 L60,0 C80,0 80,40 60,40 L40,40 L30,60 L30,40 L0,40 C-20,40 -20,0 0,0 Z" fill="#FFFFFF" stroke="#FF6B6B" stroke-width="2"></path>
+                <text x="20" y="25" font-family="Arial" font-size="12" fill="#333333">🙏</text>
+            </g>
+            
+            <!-- Connecting Lines (representing connections) -->
+            <path d="M220,170 L300,170" stroke="#8A56E2" stroke-width="2" stroke-dasharray="5,5"></path>
+            <path d="M220,200 L250,250" stroke="#8A56E2" stroke-width="2" stroke-dasharray="5,5"></path>
+            <path d="M300,200 L250,250" stroke="#8A56E2" stroke-width="2" stroke-dasharray="5,5"></path>
+            <path d="M200,200 L150,200" stroke="#8A56E2" stroke-width="2" stroke-dasharray="5,5"></path>
+            
+            <!-- Hearts -->
+            <g transform="translate(230, 180)">
+                <path d="M10,0 C14,-4 22,-4 26,0 C30,4 30,12 26,16 L10,32 L-6,16 C-10,12 -10,4 -6,0 C-2,-4 6,-4 10,0 Z" fill="#FF6B6B" opacity="0.7"></path>
+            </g>
+            
+            <g transform="translate(270, 220)">
+                <path d="M8,0 C11.2,-3.2 17.6,-3.2 20.8,0 C24,3.2 24,9.6 20.8,12.8 L8,25.6 L-4.8,12.8 C-8,9.6 -8,3.2 -4.8,0 C-1.6,-3.2 4.8,-3.2 8,0 Z" fill="#8A56E2" opacity="0.5"></path>
+            </g>
+            
+            <g transform="translate(180, 230)">
+                <path d="M6,0 C8.4,-2.4 13.2,-2.4 15.6,0 C18,2.4 18,7.2 15.6,9.6 L6,19.2 L-3.6,9.6 C-6,7.2 -6,2.4 -3.6,0 C-1.2,-2.4 3.6,-2.4 6,0 Z" fill="#FF6B6B" opacity="0.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

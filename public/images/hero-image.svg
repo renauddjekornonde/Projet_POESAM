@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Women Support Illustration</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(100, 50)">
+            <!-- Background Shapes -->
+            <circle fill="#F0EBFA" cx="300" cy="250" r="250"></circle>
+            
+            <!-- Woman 1 (Left) -->
+            <g transform="translate(50, 100)">
+                <!-- Head -->
+                <circle fill="#FFD7C3" cx="100" cy="100" r="50"></circle>
+                <!-- Hair -->
+                <path d="M50,100 C50,50 150,50 150,100 L150,150 C150,180 50,180 50,150 L50,100 Z" fill="#6C4A4A"></path>
+                <!-- Body -->
+                <path d="M70,150 L130,150 L150,300 L50,300 L70,150 Z" fill="#8A56E2"></path>
+                <!-- Arms -->
+                <path d="M70,150 L30,250 L50,260 L90,170 L70,150 Z" fill="#FFD7C3"></path>
+                <path d="M130,150 L170,250 L150,260 L110,170 L130,150 Z" fill="#FFD7C3"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="85" cy="95" r="10"></circle>
+                <circle fill="#FFFFFF" cx="115" cy="95" r="10"></circle>
+                <circle fill="#333333" cx="85" cy="95" r="5"></circle>
+                <circle fill="#333333" cx="115" cy="95" r="5"></circle>
+                <path d="M90,120 L110,120 C110,130 90,130 90,120 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Woman 2 (Right) -->
+            <g transform="translate(350, 120)">
+                <!-- Head -->
+                <circle fill="#FFC8A2" cx="100" cy="100" r="50"></circle>
+                <!-- Hair -->
+                <path d="M60,70 C60,40 140,40 140,70 L140,150 C140,180 60,180 60,150 L60,70 Z" fill="#333333"></path>
+                <!-- Body -->
+                <path d="M70,150 L130,150 L150,300 L50,300 L70,150 Z" fill="#FF6B6B"></path>
+                <!-- Arms -->
+                <path d="M70,150 L20,220 L35,235 L85,170 L70,150 Z" fill="#FFC8A2"></path>
+                <path d="M130,150 L180,220 L165,235 L115,170 L130,150 Z" fill="#FFC8A2"></path>
+                <!-- Face -->
+                <circle fill="#FFFFFF" cx="85" cy="95" r="10"></circle>
+                <circle fill="#FFFFFF" cx="115" cy="95" r="10"></circle>
+                <circle fill="#333333" cx="85" cy="95" r="5"></circle>
+                <circle fill="#333333" cx="115" cy="95" r="5"></circle>
+                <path d="M90,120 L110,120 C110,130 90,130 90,120 Z" fill="#FF6B6B"></path>
+            </g>
+            
+            <!-- Connecting Hearts -->
+            <g transform="translate(250, 200)">
+                <path d="M25,0 C35,-10 55,-10 65,0 C75,10 75,30 65,40 L25,80 L-15,40 C-25,30 -25,10 -15,0 C-5,-10 15,-10 25,0 Z" fill="#FF6B6B" opacity="0.7"></path>
+            </g>
+            
+            <g transform="translate(300, 150)">
+                <path d="M15,0 C21,-6 33,-6 39,0 C45,6 45,18 39,24 L15,48 L-9,24 C-15,18 -15,6 -9,0 C-3,-6 9,-6 15,0 Z" fill="#8A56E2" opacity="0.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -37,7 +37,8 @@ cp .env.example .env
 docker-compose up -d --build
 
 # Lancer les commandes Laravel
-docker exec -it poesam-app bash
+
+docker exec -it poesam-laravel-app bash
 php artisan key:generate
 php artisan migrate
 ```
