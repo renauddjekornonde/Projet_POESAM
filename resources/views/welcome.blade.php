@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    
+
     <style>
         :root {
             --primary-color: #8a56e2;
@@ -27,14 +27,14 @@
             --light-text: #6c757d;
             --white: #ffffff;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             background-color: #fcfcfc;
             overflow-x: hidden;
         }
-        
+
         .btn-primary {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
@@ -43,14 +43,14 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             background-color: #7442d3;
             border-color: #7442d3;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(138, 86, 226, 0.3);
         }
-        
+
         .btn-outline-primary {
             color: var(--primary-color);
             border-color: var(--primary-color);
@@ -59,20 +59,20 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .btn-outline-primary:hover {
             background-color: var(--primary-color);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(138, 86, 226, 0.3);
         }
-        
+
         .navbar {
             padding: 15px 0;
             background-color: var(--white);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -80,19 +80,19 @@
             color: var(--primary-color);
             font-size: 1.5rem;
         }
-        
+
         .navbar-brand i {
             margin-right: 10px;
             color: var(--primary-color);
         }
-        
+
         .hero-section {
             background-color: var(--secondary-color);
             padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-section::before {
             content: '';
             position: absolute;
@@ -104,7 +104,7 @@
             left: -100px;
             z-index: 0;
         }
-        
+
         .hero-section::after {
             content: '';
             position: absolute;
@@ -116,30 +116,30 @@
             right: -200px;
             z-index: 0;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
         }
-        
+
         .hero-title {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
         }
-        
+
         .hero-title span {
             color: var(--primary-color);
         }
-        
+
         .hero-subtitle {
             font-size: 1.2rem;
             color: var(--light-text);
             margin-bottom: 30px;
             line-height: 1.6;
         }
-        
+
         .feature-card {
             background-color: var(--white);
             border-radius: 15px;
@@ -149,12 +149,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             height: 100%;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
             width: 70px;
             height: 70px;
@@ -165,39 +165,39 @@
             margin-bottom: 20px;
             font-size: 1.8rem;
         }
-        
+
         .icon-chat {
             background-color: rgba(138, 86, 226, 0.1);
             color: var(--primary-color);
         }
-        
+
         .icon-heart {
             background-color: rgba(255, 107, 107, 0.1);
             color: var(--accent-color);
         }
-        
+
         .icon-users {
             background-color: rgba(52, 152, 219, 0.1);
             color: #3498db;
         }
-        
+
         .icon-shield {
             background-color: rgba(230, 126, 34, 0.1);
             color: #e67e22;
         }
-        
+
         .feature-title {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 15px;
         }
-        
+
         .feature-text {
             color: var(--light-text);
             font-size: 0.95rem;
             line-height: 1.6;
         }
-        
+
         .story-card {
             background-color: var(--white);
             border-radius: 15px;
@@ -206,46 +206,46 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         .story-card:hover {
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .story-text {
             font-style: italic;
             color: var(--text-color);
             margin-bottom: 15px;
             line-height: 1.6;
         }
-        
+
         .story-author {
             font-weight: 600;
             color: var(--primary-color);
         }
-        
+
         .story-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: 15px;
         }
-        
+
         .story-reactions {
             display: flex;
             align-items: center;
         }
-        
+
         .reaction-icon {
             color: var(--primary-color);
             margin-right: 5px;
         }
-        
+
         .testimonial-section {
             background-color: var(--secondary-color);
             padding: 80px 0;
             position: relative;
         }
-        
+
         .testimonial-card {
             background-color: var(--white);
             border-radius: 15px;
@@ -255,47 +255,47 @@
             height: 100%;
             transition: all 0.3s ease;
         }
-        
+
         .testimonial-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .testimonial-quote {
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
             line-height: 1.6;
         }
-        
+
         .testimonial-author {
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .testimonial-role {
             color: var(--light-text);
             font-size: 0.9rem;
         }
-        
+
         .cta-section {
             background-color: var(--primary-color);
             padding: 80px 0;
             color: var(--white);
             text-align: center;
         }
-        
+
         .cta-title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
-        
+
         .cta-text {
             font-size: 1.1rem;
             margin-bottom: 30px;
@@ -303,7 +303,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn-white {
             background-color: var(--white);
             color: var(--primary-color);
@@ -313,13 +313,13 @@
             transition: all 0.3s ease;
             margin-right: 15px;
         }
-        
+
         .btn-white:hover {
             background-color: rgba(255, 255, 255, 0.9);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .btn-outline-white {
             color: var(--white);
             border: 2px solid var(--white);
@@ -328,19 +328,19 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .btn-outline-white:hover {
             background-color: var(--white);
             color: var(--primary-color);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .footer {
             background-color: #f8f9fa;
             padding: 60px 0 30px;
         }
-        
+
         .footer-logo {
             font-size: 1.5rem;
             font-weight: 600;
@@ -348,41 +348,41 @@
             margin-bottom: 15px;
             display: inline-block;
         }
-        
+
         .footer-description {
             color: var(--light-text);
             margin-bottom: 25px;
             line-height: 1.6;
         }
-        
+
         .footer-heading {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--text-color);
         }
-        
+
         .footer-links {
             list-style: none;
             padding-left: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: var(--light-text);
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--primary-color);
             text-decoration: none;
             padding-left: 5px;
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -391,38 +391,38 @@
             color: var(--light-text);
             font-size: 0.9rem;
         }
-        
+
         @media (max-width: 991.98px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .cta-title {
                 font-size: 2rem;
             }
         }
-        
+
         @media (max-width: 767.98px) {
             .hero-section {
                 padding: 70px 0;
             }
-            
+
             .hero-title {
                 font-size: 2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1rem;
             }
-            
+
             .cta-title {
                 font-size: 1.8rem;
             }
-            
+
             .cta-text {
                 font-size: 1rem;
             }
-            
+
             .btn-white, .btn-outline-white {
                 display: block;
                 width: 100%;
@@ -445,7 +445,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
+                        <a class="nav-link" href="/home">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Comment ça marche</a>
@@ -455,9 +455,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/home">Accueil</a>
                     </li>
                     @if(session('is_logged_in'))
                     <li class="nav-item">
@@ -488,7 +485,7 @@
         </div>
     </div>
     @endif
-    
+
 
 
     <!-- Hero Section -->
@@ -523,9 +520,9 @@
                     <img src="{{ asset('images/sharing.svg') }}" alt="Partage d'expériences" class="img-fluid">
                 </div>
                 <div class="col-lg-6">
-                    
+
                     <h2 class="mb-4">Histoires de courage récentes</h2>
-                    
+
                     <div class="story-card">
                         <p class="story-text">"J'ai trouvé la force de parler après des années de silence..."</p>
                         <div class="story-meta">
@@ -536,7 +533,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="story-card">
                         <p class="story-text">"J'ai trouvé la force de parler après des années de silence..."</p>
                         <div class="story-meta">
@@ -547,7 +544,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="story-card">
                         <p class="story-text">"J'ai trouvé la force de parler après des années de silence..."</p>
                         <div class="story-meta">
@@ -558,13 +555,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="text-center mt-4">
                         <a href="#" class="btn btn-outline-primary">Voir plus d'histoires</a>
                     </div>
                 </div>
-                
-               
+
+
             </div>
         </div>
     </section>
@@ -576,7 +573,7 @@
                 <h2 class="mb-3">Comment ça fonctionne</h2>
                 <p class="text-muted">Notre plateforme est construite pour vous offrir un espace sûr et sécurisé, où vous pouvez partager et recevoir du soutien.</p>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="feature-card text-center">
@@ -587,7 +584,7 @@
                         <p class="feature-text">Une communauté bienveillante prête à vous écouter et vous encourager.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="feature-card text-center">
                         <div class="feature-icon icon-chat mx-auto">
@@ -597,7 +594,7 @@
                         <p class="feature-text">Un espace sûr pour raconter votre expérience et briser le silence.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="feature-card text-center">
                         <div class="feature-icon icon-heart mx-auto">
@@ -607,7 +604,7 @@
                         <p class="feature-text">Une communauté bienveillante prête à vous écouter et vous encourager.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                     <div class="feature-card text-center">
                         <div class="feature-icon icon-users mx-auto">
@@ -617,10 +614,10 @@
                         <p class="feature-text">Accès direct à des organisations spécialisées prêtes à vous aider.</p>
                     </div>
                 </div>
-                
-                
+
+
             </div>
-            
+
             <div class="text-center mt-5">
                 <a href="#" class="btn btn-primary">En savoir plus sur notre mission</a>
             </div>
@@ -634,7 +631,7 @@
                 <h2 class="mb-3">Témoignages</h2>
                 <p class="text-muted">Découvrez comment notre plateforme a aidé d'autres femmes à retrouver espoir et soutien.</p>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <div class="testimonial-card">
@@ -645,7 +642,7 @@
                         <h4 class="testimonial-author">Marie, 34 ans</h4>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 mb-4 mb-md-0">
                     <div class="testimonial-card">
                         <div class="testimonial-quote">
@@ -655,7 +652,7 @@
                         <h4 class="testimonial-author">Sophie, 27 ans</h4>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="testimonial-card">
                         <div class="testimonial-quote">
@@ -676,18 +673,18 @@
                 <h2 class="mb-3">Nos Partenaires</h2>
                 <p class="text-muted">Ils nous font confiance et nous soutiennent dans notre mission.</p>
             </div>
-            
+
             <div class="position-relative">
                 <!-- Prev Button -->
                 <div class="swiper-button-prev custom-swiper-button-prev">
                     <i class="fas fa-chevron-left"></i>
                 </div>
-                
+
                 <!-- Next Button -->
                 <div class="swiper-button-next custom-swiper-button-next">
                     <i class="fas fa-chevron-right"></i>
                 </div>
-                
+
                 <!-- Swiper -->
                 <div class="swiper partners-swiper">
                     <div class="swiper-wrapper">
@@ -697,63 +694,63 @@
                                 <img src="{{ asset('images/partners/unicef.svg') }}" alt="UNICEF" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 2 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/onu.svg') }}" alt="ONU" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 3 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/unesco.svg') }}" alt="UNESCO" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 4 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/oms.svg') }}" alt="OMS" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 5 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/unfpa.svg') }}" alt="UNFPA" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 6 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/unwomen.svg') }}" alt="UN Women" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 7 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/amnesty.svg') }}" alt="Amnesty International" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 8 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/croixrouge.svg') }}" alt="Croix Rouge" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 9 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
                                 <img src="{{ asset('images/partners/msf.svg') }}" alt="Médecins Sans Frontières" class="img-fluid">
                             </div>
                         </div>
-                        
+
                         <!-- Partner 10 -->
                         <div class="swiper-slide">
                             <div class="partner-item">
@@ -764,13 +761,13 @@
                 </div>
             </div>
         </div>
-        
+
         <style>
             .partners-section {
                 background-color: var(--white);
                 padding: 80px 0;
             }
-            
+
             .partner-item {
                 height: 220px;
                 display: flex;
@@ -784,7 +781,7 @@
                 box-shadow: 0 4px 20px rgba(0,0,0,0.08);
                 transition: all 0.3s ease;
             }
-            
+
             .partner-item img {
                 height: 140px;
                 width: auto;
@@ -794,16 +791,16 @@
                 opacity: 1;
                 transition: all 0.3s ease;
             }
-            
+
             .partner-item:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             }
-            
+
             .partner-item:hover img {
                 transform: scale(1.1);
             }
-            
+
             .custom-swiper-button-prev,
             .custom-swiper-button-next {
                 position: absolute;
@@ -822,26 +819,26 @@
                 color: var(--primary-color);
                 transition: all 0.3s ease;
             }
-            
+
             .custom-swiper-button-prev {
                 left: -20px;
             }
-            
+
             .custom-swiper-button-next {
                 right: -20px;
             }
-            
+
             .custom-swiper-button-prev:hover,
             .custom-swiper-button-next:hover {
                 background-color: var(--primary-color);
                 color: var(--white);
             }
-            
+
             @media (max-width: 768px) {
                 .custom-swiper-button-prev {
                     left: 0;
                 }
-                
+
                 .custom-swiper-button-next {
                     right: 0;
                 }
@@ -871,7 +868,7 @@
                     </a>
                     <p class="footer-description">Une plateforme sécurisée pour partager, soutenir et connecter les femmes victimes de violence.</p>
                 </div>
-                
+
                 <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
                     <h4 class="footer-heading">Navigation</h4>
                     <ul class="footer-links">
@@ -881,7 +878,7 @@
                         <li><a href="#">ONG Partenaires</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
                     <h4 class="footer-heading">Aide</h4>
                     <ul class="footer-links">
@@ -891,7 +888,7 @@
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-md-4 col-lg-2">
                     <h4 class="footer-heading">Légal</h4>
                     <ul class="footer-links">
@@ -901,7 +898,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Courage Echo. Tous droits réservés.</p>
             </div>
