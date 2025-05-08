@@ -1,8 +1,40 @@
 <?php
 // Ce script est complètement indépendant de Laravel et de ses mécanismes CSRF
 
+// Configuration de la session
+ini_set('session.gc_maxlifetime', 1800); // 30 minutes en secondes
+session_set_cookie_params(1800); // 30 minutes en secondes
+
 // Démarrer la session
 session_start();
+
+// Vérifier si la session a expiré
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+    // La session a expiré, déconnecter l'utilisateur
+    session_unset();
+    session_destroy();
+    
+    // Supprimer tous les cookies de connexion
+    setcookie('user_id', '', time() - 3600, '/');
+    setcookie('user_email', '', time() - 3600, '/');
+    setcookie('user_name', '', time() - 3600, '/');
+    setcookie('user_type', '', time() - 3600, '/');
+    setcookie('is_logged_in', '', time() - 3600, '/');
+    
+    // Forcer l'expiration des cookies dans le navigateur
+    unset($_COOKIE['user_id']);
+    unset($_COOKIE['user_email']);
+    unset($_COOKIE['user_name']);
+    unset($_COOKIE['user_type']);
+    unset($_COOKIE['is_logged_in']);
+    
+    // Rediriger vers la page d'accueil
+    header("Location: /");
+    exit();
+}
+
+// Mettre à jour le timestamp de dernière activité
+$_SESSION['last_activity'] = time();
 
 // Déconnexion
 if (isset($_GET['logout'])) {
@@ -10,15 +42,23 @@ if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
     
-    // Supprimer les cookies de connexion
+    // Supprimer tous les cookies de connexion
     setcookie('user_id', '', time() - 3600, '/');
     setcookie('user_email', '', time() - 3600, '/');
     setcookie('user_name', '', time() - 3600, '/');
+    setcookie('user_type', '', time() - 3600, '/');
     setcookie('is_logged_in', '', time() - 3600, '/');
+    
+    // Forcer l'expiration des cookies dans le navigateur
+    unset($_COOKIE['user_id']);
+    unset($_COOKIE['user_email']);
+    unset($_COOKIE['user_name']);
+    unset($_COOKIE['user_type']);
+    unset($_COOKIE['is_logged_in']);
     
     // Rediriger vers la page d'accueil
     header("Location: /");
-    exit;
+    exit();
 }
 
 // Nous commentons cette redirection pour éviter la boucle infinie

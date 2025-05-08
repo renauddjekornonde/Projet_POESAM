@@ -372,7 +372,9 @@
                     <div class="main-content">
                         <!-- Welcome Banner -->
                         <div class="welcome-banner">
-                            <h2>Bienvenue, {{ session('user_name') }} !</h2>
+                            @if(session('is_logged_in'))
+                                <h2>Bienvenue, {{ session('user_name') }} !</h2>
+                            @endif
                             <p>Nous sommes heureux de vous revoir sur votre espace sécurisé. Explorez les ressources disponibles et connectez-vous avec la communauté.</p>
                         </div>
                         

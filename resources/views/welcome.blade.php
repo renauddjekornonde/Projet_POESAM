@@ -456,21 +456,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
-                    @if(session('is_logged_in'))
-                    <li class="nav-item">
-                        <span class="nav-link">Bienvenue {{ session('user_name') }} !</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/direct-login.php?logout=1">Déconnexion</a>
-                    </li>
+                    @php
+                        $is_logged_in = isset($_COOKIE['is_logged_in']) && $_COOKIE['is_logged_in'] === 'true';
+                        $user_name = $_COOKIE['user_name'] ?? '';
+                    @endphp
+
+                    @if($is_logged_in)
+                        <li class="nav-item">
+                            <span class="nav-link">Bienvenue {{ $user_name }} !</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/direct-login.php?logout=1">Déconnexion</a>
+                        </li>
                     @else
-                    <li class="nav-item">
-                        <a class="btn btn-outline-primary ms-lg-3" href="/direct-login.php">Se connecter</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary ms-lg-3" href="/direct-login.php">Se connecter</a>
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <a class="btn btn-primary ms-lg-3" href="/direct-register.php">S'inscrire</a>
                     </li>
-                    @endif
                 </div>
             </div>
         </div>
