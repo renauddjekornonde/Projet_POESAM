@@ -133,14 +133,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
             min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 20px;
-            background-image: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            align-items: center;
+            position: relative;
+            background-image: url('images/register-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(138, 86, 226, 0.85) 0%, rgba(90, 55, 150, 0.75) 100%);
+            z-index: 1;
         }
         
 
@@ -148,13 +163,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .register-container {
             width: 100%;
             max-width: 600px;
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            box-shadow: 0 15px 35px var(--shadow-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
             padding: 40px;
             position: relative;
             overflow: hidden;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .register-container:hover {
@@ -367,18 +397,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             position: absolute;
             top: 20px;
             left: 20px;
-            color: var(--primary-color);
             text-decoration: none;
-            font-size: 15px;
+            color: white;
             font-weight: 500;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            z-index: 10;
+            gap: 8px;
             transition: all 0.3s ease;
-            padding: 8px 15px;
-            border-radius: 30px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+            background-color: rgba(138, 86, 226, 0.8);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .back-to-home i {
