@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('administrateurs', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->string('nom', 50);
             $table->string('prenom', 50);
             $table->unsignedBigInteger('id_user')->nullable();

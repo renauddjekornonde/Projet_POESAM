@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(50, 20)">
+        <!-- UN Logo -->
+        <circle cx="100" cy="50" r="45" fill="#009EDB"/>
+        <!-- World Map Symbol -->
+        <path d="M60,50 C60,30 140,30 140,50 C140,70 60,70 60,50" fill="#FFFFFF"/>
+        <!-- Olive Branches -->
+        <path d="M70,50 Q85,40 100,50 T130,50" stroke="#FFFFFF" fill="none" stroke-width="4"/>
+        <path d="M70,57 Q85,47 100,57 T130,57" stroke="#FFFFFF" fill="none" stroke-width="4"/>
+        <!-- Text with more spacing -->
+        <text x="100" y="130" font-family="Arial" font-size="28" font-weight="bold" fill="#009EDB" text-anchor="middle">ONU</text>
+    </g>
+</svg>
