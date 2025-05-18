@@ -19,7 +19,7 @@ Route::get('/home', function (\Illuminate\Http\Request $request) {
             'user_type' => $_COOKIE['user_type'] ?? null,
             'is_logged_in' => true
         ]);
-        
+
         // Vérifier le type d'utilisateur
         if (isset($_COOKIE['user_type']) && $_COOKIE['user_type'] !== 'victime') {
             // Rediriger vers le tableau de bord approprié
@@ -29,11 +29,11 @@ Route::get('/home', function (\Illuminate\Http\Request $request) {
                 return redirect('/organisation/dashboard');
             }
         }
-        
+
         // Afficher la page home avec les données de session
         return view('home');
     }
-    
+
     // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
     return redirect('/direct-login.php');
 })->name('home');
@@ -51,7 +51,7 @@ Route::prefix('admin')->group(function () {
                 'user_type' => $_COOKIE['user_type'] ?? null,
                 'is_logged_in' => true
             ]);
-            
+
             // Récupérer les organisations pour le tableau de bord
             try {
                 $pdo = new PDO("mysql:host=db;dbname=poesam;charset=utf8mb4", "root", "rootpass", [
@@ -59,21 +59,21 @@ Route::prefix('admin')->group(function () {
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     PDO::ATTR_EMULATE_PREPARES => false,
                 ]);
-                
+
                 $stmt = $pdo->prepare("SELECT o.*, u.email, u.created_at as date_creation FROM organisations o JOIN users u ON o.id_user = u.id ORDER BY o.created_at DESC");
                 $stmt->execute();
                 $organisations = $stmt->fetchAll();
-                
+
                 return view('admin.dashboard', ['organisations' => $organisations]);
             } catch (\Exception $e) {
                 return view('admin.dashboard', ['organisations' => [], 'error' => $e->getMessage()]);
             }
         }
-        
+
         // Si l'utilisateur n'est pas connecté en tant qu'admin, rediriger vers la page de connexion
         return redirect('/direct-login.php');
     })->name('admin.dashboard');
-    
+
     // Routes pour la gestion des organisations avec le contrôleur
     Route::get('/create-organisation', 'App\Http\Controllers\Admin\OrganisationController@create')->name('admin.create-organisation');
     Route::post('/create-organisation', 'App\Http\Controllers\Admin\OrganisationController@store');
@@ -97,16 +97,54 @@ Route::prefix('organisation')->group(function () {
                 'user_type' => $_COOKIE['user_type'] ?? null,
                 'is_logged_in' => true
             ]);
-            
+
             return view('organisation.dashboard');
         }
-        
+
         // Si l'utilisateur n'est pas connecté en tant qu'organisation, rediriger vers la page de connexion
         return redirect('/direct-login.php');
     })->name('organisation.dashboard');
-});
 
-// Les routes pour le système d'authentification simplifié ont été supprimées car nous utilisons maintenant direct-login.php
+    // Routes pour les cas
+    Route::prefix('cases')->group(function () {
+        Route::get('/', 'App\Http\Controllers\Organisation\CaseController@index')->name('organisation.cases.index');
+        Route::get('/statistics', 'App\Http\Controllers\Organisation\CaseController@statistics')->name('organisation.cases.statistics');
+        Route::get('/statistics/data', 'App\Http\Controllers\Organisation\CaseController@getStatistics')->name('organisation.cases.statistics.data');
+        Route::post('/', 'App\Http\Controllers\Organisation\CaseController@store')->name('organisation.cases.store');
+    });
+
+    // Routes pour les ressources
+    Route::prefix('resources')->group(function () {
+        Route::post('/store', 'App\Http\Controllers\Organisation\ResourceController@store')->name('organisation.resources.store');
+        Route::get('/', 'App\Http\Controllers\Organisation\ResourceController@index')->name('organisation.resources.index');
+        Route::get('/{id}', 'App\Http\Controllers\Organisation\ResourceController@show')->name('organisation.resources.show');
+        Route::put('/{id}', 'App\Http\Controllers\Organisation\ResourceController@update')->name('organisation.resources.update');
+        Route::delete('/{id}', 'App\Http\Controllers\Organisation\ResourceController@destroy')->name('organisation.resources.destroy');
+    });
+
+    // Routes pour les consultations
+    Route::prefix('consultations')->group(function () {
+        Route::post('/store', 'App\Http\Controllers\Organisation\ConsultationController@store')->name('organisation.consultations.store');
+        Route::get('/', 'App\Http\Controllers\Organisation\ConsultationController@index')->name('organisation.consultations.index');
+        Route::get('/{id}', 'App\Http\Controllers\Organisation\ConsultationController@show')->name('organisation.consultations.show');
+        Route::put('/{id}', 'App\Http\Controllers\Organisation\ConsultationController@update')->name('organisation.consultations.update');
+        Route::delete('/{id}', 'App\Http\Controllers\Organisation\ConsultationController@destroy')->name('organisation.consultations.destroy');
+    });
+
+    // Routes pour les événements
+    Route::prefix('events')->group(function () {
+        Route::get('/', 'App\Http\Controllers\Organisation\EventController@index')->name('organisation.events.index');
+        Route::post('/', 'App\Http\Controllers\Organisation\EventController@store')->name('organisation.events.store');
+        Route::put('/{id}', 'App\Http\Controllers\Organisation\EventController@update')->name('organisation.events.update');
+        Route::delete('/{id}', 'App\Http\Controllers\Organisation\EventController@destroy')->name('organisation.events.destroy');
+    });
+
+    // Routes pour le profil
+    Route::prefix('profile')->group(function () {
+        Route::get('/', 'App\Http\Controllers\Organisation\ProfileController@show')->name('organisation.profile.show');
+        Route::put('/update', 'App\Http\Controllers\Organisation\ProfileController@update')->name('organisation.profile.update');
+    });
+});
 
 // Route de redirection pour résoudre l'erreur 'Route [login] not defined'
 Route::get('/login', function () {
