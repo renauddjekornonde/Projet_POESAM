@@ -12,7 +12,6 @@ Route::get('/home', function (\Illuminate\Http\Request $request) {
     // Vérifier si l'utilisateur est connecté via les cookies
     if (isset($_COOKIE['is_logged_in']) && $_COOKIE['is_logged_in'] === 'true') {
         // Copier les données des cookies vers la session Laravel pour les rendre disponibles dans la vue
-
         session([
             'user_id' => $_COOKIE['user_id'] ?? null,
             'user_email' => $_COOKIE['user_email'] ?? null,
@@ -23,7 +22,6 @@ Route::get('/home', function (\Illuminate\Http\Request $request) {
         
         // Vérifier le type d'utilisateur
         if (isset($_COOKIE['user_type']) && $_COOKIE['user_type'] !== 'victime') {
-
             // Rediriger vers le tableau de bord approprié
             if ($_COOKIE['user_type'] === 'admin') {
                 return redirect('/admin/dashboard');
@@ -32,9 +30,8 @@ Route::get('/home', function (\Illuminate\Http\Request $request) {
             }
         }
         
-     // Afficher la page home avec les données de session
+        // Afficher la page home avec les données de session
         return view('home');
-
     }
     
     // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
