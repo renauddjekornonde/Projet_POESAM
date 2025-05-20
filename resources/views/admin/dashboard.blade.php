@@ -4,27 +4,27 @@
 <div class="container-fluid">
     <div class="row">
         @include('layouts.sidebar', ['userType' => 'admin'])
-        
+
         <!-- Contenu principal -->
         <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Tableau de bord</h1>
             </div>
-            
+
             @if(request()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ request()->get('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            
+
             @if(request()->has('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ request()->get('error') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            
+
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="alert alert-info">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mb-4">
                 <div class="col-md-4">
                     <div class="card shadow-sm h-100">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="card shadow-sm">
@@ -111,10 +111,10 @@
                                         @if(isset($organisations) && count($organisations) > 0)
                                             @foreach($organisations as $organisation)
                                             <tr>
-                                                <td>{{ $organisation['nom_organisation'] ?? 'N/A' }}</td>
-                                                <td>{{ $organisation['type_organisation'] ?? 'N/A' }}</td>
+                                                <td>{{ $organisation['nom'] ?? 'N/A' }}</td>
+                                                <td>{{ $organisation['type'] ?? 'N/A' }}</td>
                                                 <td>{{ $organisation['email'] ?? 'N/A' }}</td>
-                                                <td>{{ $organisation['telephone_organisation'] ?? 'N/A' }}</td>
+                                                <td>{{ $organisation['telephone'] ?? 'N/A' }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($organisation['date_creation'] ?? now())->format('d/m/Y H:i') }}</td>
                                                 <td>
                                                     <div class="btn-group">
@@ -136,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="card shadow-sm">
