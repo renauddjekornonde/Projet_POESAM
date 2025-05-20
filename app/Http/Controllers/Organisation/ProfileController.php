@@ -21,10 +21,10 @@ class ProfileController extends Controller
                 'users.name',
                 'users.email',
                 DB::raw('DATE_FORMAT(users.created_at, "%d/%m/%Y") as created_at'),
-                'organisations.telephone_organisation as phone',
-                'organisations.adresse_organisation as address',
-                'organisations.description_organisation as description',
-                'organisations.logo_organisation as logo'
+                'organisations.telephone as phone',
+                'organisations.adresse as address',
+                'organisations.description as description',
+                'organisations.logo as logo'
             )
             ->first();
 
@@ -74,9 +74,9 @@ class ProfileController extends Controller
 
             // Mettre à jour les informations de l'organisation
             $updateOrg = [
-                'telephone_organisation' => $request->phone,
-                'adresse_organisation' => $request->address,
-                'description_organisation' => $request->description,
+                'telephone' => $request->phone,
+                'adresse' => $request->address,
+                'description' => $request->description,
                 'updated_at' => now()
             ];
 
@@ -85,7 +85,7 @@ class ProfileController extends Controller
                 // Supprimer l'ancien logo s'il existe
                 $oldLogo = DB::table('organisations')
                     ->where('id_user', $_COOKIE['user_id'])
-                    ->value('logo_organisation');
+                    ->value('logo');
 
                 if ($oldLogo) {
                     Storage::delete('public/' . $oldLogo);
@@ -93,7 +93,7 @@ class ProfileController extends Controller
 
                 // Sauvegarder le nouveau logo
                 $path = $request->file('logo')->store('organisations/logos', 'public');
-                $updateOrg['logo_organisation'] = $path;
+                $updateOrg['logo'] = $path;
             }
 
             DB::table('organisations')

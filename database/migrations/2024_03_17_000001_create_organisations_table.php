@@ -21,8 +21,9 @@ class CreateOrganisationsTable extends Migration
             $table->string('telephone');
             $table->text('adresse');
             $table->text('description');
+            $table->string('logo')->nullable();
             $table->timestamps();
-            
+
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
