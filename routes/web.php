@@ -12,7 +12,9 @@ use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\HomeController;
 
 // Route pour la page d'accueil
-Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 // Routes pour les publications
 Route::post('/publications', [PublicationController::class, 'store'])->name('publications.store');
@@ -28,7 +30,38 @@ Route::match(['get', 'post'], '/reactions', [ReactionController::class, 'store']
 Route::delete('/reactions/{reaction}', [ReactionController::class, 'destroy'])->name('reactions.destroy');
 
 // Route pour la page home (tableau de bord des victimes)
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', function (\Illuminate\Http\Request $request) {
+    // Vérifier si l'utilisateur est connecté via les cookies
+    if (isset($_COOKIE['is_logged_in']) && $_COOKIE['is_logged_in'] === 'true') {
+        // Copier les données des cookies vers la session Laravel pour les rendre disponibles dans la vue
+        session([
+            'user_id' => $_COOKIE['user_id'] ?? null,
+            'user_email' => $_COOKIE['user_email'] ?? null,
+            'user_name' => $_COOKIE['user_name'] ?? null,
+            'user_type' => $_COOKIE['user_type'] ?? null,
+            'is_logged_in' => true
+        ]);
+
+        // Vérifier le type d'utilisateur
+        if (isset($_COOKIE['user_type']) && $_COOKIE['user_type'] !== 'victime') {
+            // Rediriger vers le tableau de bord approprié
+            if ($_COOKIE['user_type'] === 'admin') {
+                return redirect('/admin/dashboard');
+            } elseif ($_COOKIE['user_type'] === 'organisation') {
+                return redirect('/organisation/dashboard');
+            }
+        }
+
+        // Récupérer les publications
+        $publications = \App\Models\Publication::orderBy('date_publication', 'desc')->get();
+        
+        // Afficher la page home avec les données de session et les publications
+        return view('home', compact('publications'));
+    }
+
+    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    return redirect('/direct-login.php');
+})->name('home');
 
 // Routes pour le profil utilisateur
 Route::get('/profile', [\App\Http\Controllers\UserController::class, 'profile'])->name('profile');
